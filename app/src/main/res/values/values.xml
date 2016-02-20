@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="url_list">
+        <item>http://iamprogramer.cloudapp.net/e1701.mp3</item>
+        <item>http://podcastfile.imbc.com/cgi-bin/podcast.fcgi/podcast/economy/ECONOMY_20151201.mp3</item>
+    </array>
+
+    <array name="url_feed">
+        <item>http://minicast.imbc.com/PodCast/pod.aspx?code=1000671100000100000</item>
+        <item>https://iamprogrammer.io/feed</item>
+    </array>
+
+    <array name="url_title">
+        <item>Economy</item>
+        <item>iamprogrammer.io</item>
+    </array>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider
+    android:minWidth="36.0dip"
+    android:minHeight="36.0dip"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/battery_widget"
+    android:previewImage="@drawable/bluetooth_4"
+    xmlns:android="http://schemas.android.com/apk/res/android"/>

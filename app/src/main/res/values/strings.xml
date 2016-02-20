@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Downloader</string>
+    <string name="title_activity_file_encryption">FileEncryptionActivity</string>
+    <string name="widget_name">Battery Level</string>
+</resources>
