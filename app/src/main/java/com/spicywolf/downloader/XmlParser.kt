@@ -25,7 +25,6 @@ class XmlParser {
         factory.isNamespaceAware = true
         val xpp = factory.newPullParser()
         xpp.setInput(`in`, null)
-
         val entries = ArrayList<Item>()
 
         var eventType = xpp.eventType
