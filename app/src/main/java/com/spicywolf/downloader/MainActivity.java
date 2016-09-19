@@ -31,9 +31,12 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
 import org.xmlpull.v1.XmlPullParserException;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -132,13 +135,15 @@ public class MainActivity extends Activity {
 
 
         File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC),
-                            getLocalMediaSubDir());
+                getLocalMediaSubDir());
         if (!dir.exists() && !dir.mkdirs()) {
             return;
         }
 
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         request.setTitle(mItemList.get(mSelectedIndex).title);
+        request.addRequestHeader("user-agent", "Mozilla/5.0 (Windows NT 6.1; rv:12.0) Gecko/20120403211507 Firefox/12.0");
+
         //request.setDescription("");
 
         String fileSubPath = getLocalMediaFileSubPath() + (ENABLE_RENAME_AFTER_DOWNLOAD ? TMP_EXT : "");
@@ -275,13 +280,13 @@ public class MainActivity extends Activity {
 
             if (reason == DownloadManager.STATUS_SUCCESSFUL) {
                 Toast.makeText(getApplicationContext(), String.format("Download completed [%s]",
-                                                                      new File(Environment.DIRECTORY_MUSIC,
-                                                                               mDownloadList.get(id))
-                                                                              .getAbsolutePath()), Toast.LENGTH_SHORT)
+                        new File(Environment.DIRECTORY_MUSIC,
+                                mDownloadList.get(id))
+                                .getAbsolutePath()), Toast.LENGTH_SHORT)
                         .show();
             } else {
                 Toast.makeText(getApplicationContext(), String.format("Failed to download file: reason [%d]", reason),
-                               Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT).show();
             }
 
 
@@ -291,7 +296,7 @@ public class MainActivity extends Activity {
 
                 final File file = new File(Environment.DIRECTORY_MUSIC, subPath);
                 final File renameFile = new File(Environment.DIRECTORY_MUSIC,
-                                                 subPath.substring(0, subPath.length() - TMP_EXT.length()));
+                        subPath.substring(0, subPath.length() - TMP_EXT.length()));
                 Log.d(TAG, "onDownloadCompleted - old path: " + file.getAbsolutePath());
                 Log.d(TAG, "onDownloadCompleted - new path: " + renameFile.getAbsolutePath());
 
