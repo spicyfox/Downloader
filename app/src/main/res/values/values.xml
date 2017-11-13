@@ -7,11 +7,11 @@
 
     <array name="url_feed">
         <item>http://minicast.imbc.com/PodCast/pod.aspx?code=1000671100000100000</item>
-        <item>https://iamprogrammer.io/feed</item>
+        <item>http://pod.ssenhosting.com/rss/tbsadm/radiofactory.xml</item>
     </array>
 
     <array name="url_title">
         <item>Economy</item>
-        <item>iamprogrammer.io</item>
+        <item>NewsFactory</item>
     </array>
 </resources>
